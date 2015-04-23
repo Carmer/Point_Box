@@ -38,11 +38,11 @@ ActiveRecord::Schema.define(version: 20150423194857) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "username"
-    t.integer  "role"
+    t.integer  "role",            default: 0
     t.string   "password_digest"
-    t.integer  "points"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.integer  "points",          default: 10
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   add_foreign_key "user_rewards", "rewards"
