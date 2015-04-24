@@ -1,0 +1,18 @@
+<h1>User Information Page for: <%= @user.username %></h1>
+
+<table border=2px>
+<tr>
+  <td>First Name</td>
+  <td>Last Name</td>
+  <td>Username</td>
+  <td>Current Points</td>
+  <td>Rewards Owned</td>
+</tr>
+<tr>
+  <td><%= @user.first_name %></td>
+  <td><%= @user.last_name %></td>
+  <td><%= @user.username %></td>
+  <td><%= @user.points %></td>
+  <td><%= @user.rewards.name %></td>
+</tr>
+</table>

@@ -1,0 +1,7 @@
+<h1>Edit Users Points</h1>
+
+<%= form_for @user, url: admin_user_path do |f| %>
+<%= f.label "Add Points" %>
+<%= f.text_field :points %>
+<%= f.submit "Add Points" %>
+<% end %>
