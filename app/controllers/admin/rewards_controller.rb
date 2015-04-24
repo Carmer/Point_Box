@@ -1,3 +1,3 @@
-# class Admin::RewardsController < Admin::Base
+# class Admin::RewardsController < Admin::BaseController
 #
 # end

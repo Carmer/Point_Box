@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :rewards, only: [:show]
 
     namespace :admin do
-      resources :rewards, :users, :admin, only: [:show]
+      resources :rewards, :users
     end
 
     get '/admin', to: "admin#show"

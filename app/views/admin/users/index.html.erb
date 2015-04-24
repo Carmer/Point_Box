@@ -1,0 +1,26 @@
+<h1>All Users</h1>
+
+
+<table class="admin_users", border=2px>
+
+<% @users.each do |user| %>
+<tr>
+  <td>First Name</td>
+  <td>Last Name</td>
+  <td>Username</td>
+  <td>Current Points</td>
+  <td>Rewards Owned</td>
+  <td>Links</td>
+
+</tr>
+<tr>
+  <td><%= user.first_name %></td>
+  <td><%= user.last_name %></td>
+  <td><%= user.username %></td>
+  <td><%= user.points %></td>
+  <td><%= user.rewards.name %></td>
+  <td><%= link_to "Add Points", edit_admin_user_path(user.id, option: "add_points") %>,
+    <%= link_to "Edit User", edit_admin_user_path(user.id, option: "edit_user") %></td>
+</tr>
+<% end %>
+</table>
