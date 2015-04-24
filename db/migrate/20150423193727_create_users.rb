@@ -4,9 +4,9 @@ class CreateUsers < ActiveRecord::Migration
       t.string :first_name
       t.string :last_name
       t.string :username
-      t.integer :role
+      t.integer :role, default: 0
       t.string :password_digest
-      t.integer :points
+      t.integer :points, default: 10
 
       t.timestamps null: false
     end
