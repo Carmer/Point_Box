@@ -1,1 +1,27 @@
 <h1>Welcome, <%= current_user.username %></h1>
+
+<div class="points">
+<h3 class="points">Your Total Points!</h3>
+<p class="points">
+  <%= current_user.points %> points
+</p>
+</div>
+
+
+<div class="rewards">
+  <h3 class="rewards">Your Redeemed Rewards</h3>
+  <table class="rewards" border=2px, width="50%">
+      <tr>
+        <td>Reward</td>
+        <td>Description</td>
+        <td>Cost</td>
+      </tr>
+        <% current_user.rewards.each do |reward| %>
+        <tr>
+          <td><%= reward.name %></td>
+          <td><%= reward.description %></td>
+          <td><%= reward.cost %></td>
+      </tr>
+        <% end %>
+  </table>
+</div>
