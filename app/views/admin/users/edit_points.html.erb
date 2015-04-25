@@ -2,6 +2,6 @@
 
 <%= form_for @user, url: admin_user_path do |f| %>
 <%= f.label "Add Points" %>
-<%= f.text_field :points %>
+<%= f.text_field :points, placeholder: "Points" %>
 <%= f.submit "Add Points" %>
 <% end %>

@@ -5,4 +5,8 @@ class Reward < ActiveRecord::Base
   validates :name, presence: :true
   validates :description, presence: :true
   validates :cost, presence: :true
+
+  def to_s
+    name
+  end
 end
