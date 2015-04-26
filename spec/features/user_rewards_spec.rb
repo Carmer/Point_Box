@@ -37,7 +37,7 @@ RSpec.describe "user rewards" do
       fill_in "session[password]", with: user.password
       click_button "Login"
 
-      click_link("All Available Rewards")
+      click_link("View All Available Rewards")
 
       expect(page).to have_content(reward1.name)
       expect(page).to have_content(reward2.description)
@@ -53,10 +53,9 @@ RSpec.describe "user rewards" do
       fill_in "session[password]", with: user.password
       click_button "Login"
 
-      expect(page).to have_content("Your Total Points!")
       expect(page).to have_content("10 points")
 
-      click_link("All Available Rewards")
+      click_link("View All Available Rewards")
 
       first(:button, "Redeem Reward").click
 
