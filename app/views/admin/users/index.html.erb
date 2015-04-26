@@ -4,6 +4,8 @@
 <table class="admin_users", border=2px>
 
 <tr>
+
+  <td>Profile Picture</td>
   <td>First Name</td>
   <td>Last Name</td>
   <td>Username</td>
@@ -14,6 +16,7 @@
 </tr>
 <% @users.each do |user| %>
 <tr>
+  <td><img src="<%= user.profile_picture(:thumb) %>" alt="Profile picture for user: <%=user.username %>" /></td>
   <td><%= user.first_name %></td>
   <td><%= user.last_name %></td>
   <td><%= user.username %></td>
