@@ -37,8 +37,9 @@
           <li class="active"><%= link_to "User List", admin_users_path %></li>
           <li class="active"><%= link_to "Logout", logout_path, method: "delete" %></li>
         <% else %>
-         <li><%= link_to "Browse Rewards", user_rewards_path %></li>
          <li><%= link_to "Dashboard", root_path %></li>
+         <li><%= link_to "Browse Rewards", new_user_reward_path %></li>
+         <li><%= link_to "Edit Profile", edit_user_path %></li>
          <ul class="nav navbar-nav navbar-right">
            <li><%= link_to "Logout", logout_path, method: "delete" %></li>
          </ul>

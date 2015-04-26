@@ -1,5 +1,8 @@
 <h1>Welcome, <%= current_user.username %></h1>
 
+<div class="user_information">
+
+
 <img src="<%=current_user.profile_picture(:thumb) %>" /><br>
 
 
@@ -23,16 +26,19 @@
   <h3 class="rewards">Your Redeemed Rewards</h3>
   <table class="rewards" border=2px, width="50%">
       <tr>
+        <td>Picture</td>
         <td>Reward</td>
         <td>Description</td>
         <td>Cost</td>
       </tr>
         <% current_user.rewards.each do |reward| %>
         <tr>
+          <td><img src="<%= reward.image %>" alt="Image for reward: <%= reward.name %>" /></td>
           <td><%= reward.name %></td>
           <td><%= reward.description %></td>
           <td><%= reward.cost %></td>
       </tr>
         <% end %>
   </table>
+</div>
 </div>
