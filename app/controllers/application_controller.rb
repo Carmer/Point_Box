@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   helper_method :current_user
+  helper_method :current_admin?
 
   def current_user
     @curent_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -12,4 +13,9 @@ class ApplicationController < ActionController::Base
   def current_admin?
     current_user && current_user.admin?
   end
+
+  # def dashboard
+  #
+  # end
+
 end

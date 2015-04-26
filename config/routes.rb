@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+    root 'application#dashboard'
+
     resource :user
 
     namespace :admin do
