@@ -1,7 +1,11 @@
 <h1>User Information Page for: <%= @user.username %></h1>
 
+
+<div class="user_information">
+
 <table border=2px>
   <tr>
+    <td>Profile Picture</td>
     <td>First Name</td>
     <td>Last Name</td>
     <td>Username</td>
@@ -9,6 +13,7 @@
     <td>Rewards Owned</td>
   </tr>
   <tr>
+    <td><img src="<%= @user.profile_picture(:thumb) %>" alt="Profile picture for user: <%= @user.username %>" /></td>
     <td><%= @user.first_name %></td>
     <td><%= @user.last_name %></td>
     <td><%= @user.username %></td>
@@ -20,3 +25,4 @@
     <% end %>
   </tr>
 </table>
+</div>

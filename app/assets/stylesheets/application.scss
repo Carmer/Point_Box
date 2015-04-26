@@ -2,3 +2,22 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+
+
+ div#flash_notice {
+   background-color: #36a830;
+   color: white;
+   padding: 5px;
+ }
+
+ div#flash_errors {
+  background-color: #c71b00;
+  color: white;
+  padding: 5px;
+}
+
+
+div.user_information {
+  padding: 10px;
+}
