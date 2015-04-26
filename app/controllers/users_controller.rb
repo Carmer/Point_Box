@@ -20,6 +20,11 @@ class UsersController < ApplicationController
     current_user
   end
 
+  def edit
+    # binding.pry
+    @user = User.find(params[:options][:id])
+  end
+
 
   private
 

@@ -1,0 +1,13 @@
+
+<ol>
+<% @rewards.each do |reward| %>
+  <li><h3><%= reward.name %></h3>
+    <ul>
+      <li>Description: <%= reward.description %></li>
+      <li>Cost: <%= reward.cost %></li>
+    </ul>
+    <p><%= link_to "Edit", edit_admin_reward_path(reward) %> </p>
+    <p><%= link_to "Delete", admin_reward_path(reward.id), method: :delete %> </p>
+  </li>
+  <% end %>
+</ol>

@@ -1,0 +1,13 @@
+
+<ol>
+  <% @rewards.each do |reward| %>
+    <li>
+      <h3><%= reward.name %></h3>
+      <ul>
+        <li>Description: <%= reward.description %></li>
+        <li>Cost: <%= reward.cost %></li>
+      </ul>
+      <p><%= button_to("Redeem Reward", user_rewards_path(reward_info: {reward_cost: reward.cost, reward_id: reward.id})) %></p>
+    </li>
+  <% end %>
+</ol>
