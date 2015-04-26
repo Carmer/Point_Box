@@ -44,6 +44,7 @@ class Admin::UsersController < Admin::BaseController
                                  :last_name,
                                  :username,
                                  :points,
-                                 :password)
+                                 :password,
+                                 :profile_picture)
   end
 end
