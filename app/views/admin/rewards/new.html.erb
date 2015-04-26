@@ -1,0 +1,7 @@
+<%= form_for @reward, url: admin_rewards_path do |f| %>
+
+<%= f.text_field :name, placeholder: "Reward Name" %>
+<%= f.text_area :description, placeholder: "Description" %>
+<%= f.text_field :cost, placeholder: "cost" %>
+<%= f.submit "Create" %>
+<% end %>

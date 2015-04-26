@@ -1,22 +1,27 @@
 require 'rails_helper'
 
 RSpec.describe "admin adding points" do
-  let!(:users) {
-    User.create(first_name: "Bobby",
+  let!(:user1) {
+    User.create(first_name: "Travis",
                         last_name: "Mejia",
-                        username: "waits",
+                        username: "dhdhdht",
                         password: "password")
+                      }
 
-    User.create(first_name: "Andrew",
+  let!(:user2) {
+    User.create(first_name: "jake",
                         last_name: "Carmer",
-                        username: "ajc",
+                        username: "jakeyjake",
                         password: "password")
+                      }
 
+  let!(:user3) {
     User.create(first_name: "jon",
                         last_name: "doe",
                         username: "jdf",
                         password: "password")
-  }
+                      }
+
   context "as an admin" do
     it "can add points to any user" do
       admin = User.create(first_name: "Richard",
@@ -33,16 +38,15 @@ RSpec.describe "admin adding points" do
       click_button "Login"
 
       visit admin_users_path
-      expect(page).to have_content(User.first.username)
-      expect(page).to have_content(User.last.username)
+      expect(page).to have_content(user1.username)
+      expect(page).to have_content(user2.username)
+      expect(page).to have_content(user3.username)
 
       first(:link, "Add Points").click
       fill_in "user[points]", with: 50
       click_button "Add Points"
-      save_and_open_page
-      expect(current_path).to eq(admin_user_path(User.first))
-      expect(page).to have_content(User.first.username)
-      expect(page).to have_content(User.first.points)
+
+      expect(page).to have_content(user1.username)
       expect(page).to have_content(60)
     end
   end
