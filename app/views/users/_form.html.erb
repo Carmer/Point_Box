@@ -1,6 +1,7 @@
 <div class="user_information">
 
 
+<p>
 <%= form_for @user, url: user_path(@user), html: {multipart: true} do |f| %>
 
 <%= f.text_field :first_name, placeholder: "First Name" %><br>
@@ -12,5 +13,6 @@
 <%= f.file_field :profile_picture %>
 <%= f.submit "Submit" %>
 <% end %>
+</p>
 
 </div>

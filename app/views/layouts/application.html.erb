@@ -12,9 +12,11 @@
 <body>
 
   <nav class="nabar container-default">
+    <div class="border-container">
     <div class="container-fluid">
   <div class="masthead">
-    <img src="/system/application/PointBox.jpg"/>
+  <div class="black-background">
+    <img src="/system/application/POINTBOX_LOGO.jpg"/>
   </div>
       <div class="class navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapsed" data-target="">
@@ -30,6 +32,7 @@
         <ul class="nav navbar-nav">
         <% if current_user.nil? %>
           <li class="active"><%= link_to "Login", login_path %></li>
+          <li class="active"><%= link_to "Login With Twitter", url: '/auth/twitter' %></li>
           <li class="active"><%= link_to "New User", new_user_path %></li>
         <% elsif current_admin? %>
           <li class="active"><%= link_to "New Reward", new_admin_reward_path %></li>
@@ -45,7 +48,6 @@
          </ul>
        <% end %>
         </ul>
-
       </div>
 
     </div>
@@ -53,15 +55,19 @@
 
 
 
-<header>
   <% flash.each do |name, msg| %>
-  <%= content_tag :div, msg, :id => "flash #{name}" %>
+  <%= content_tag :div, msg, :id => "flash_#{name}" %>
   <% end %>
-</header>
+
+<div class="container">
+
+      </div>
 <%= yield %>
+</div>
 
 
-
+</div>
 
 </body>
+
 </html>

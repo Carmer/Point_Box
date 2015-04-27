@@ -11,6 +11,10 @@ Rails.application.routes.draw do
       resources :rewards, only: [:new, :create]
     end
 
+# for authentication through twitter
+    # get '/auth/:provider/callback' => 'sessions#create'
+    # match via: [:get, :post], "/login" => redirect("/auth/twitter"), as: :login
+
     get '/admin', to: "admin#show"
 
     get '/admin/login', to: "sessions#new"
