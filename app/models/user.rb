@@ -17,4 +17,22 @@ class User < ActiveRecord::Base
   def admin?
     role == "admin"
   end
+
+  def self.find_or_create_by_auth(auth_data)
+    user = User.where(provider: auth_data['provider'], id: auth_data['uid']).first_or_create
+    if user.first_name != parsed_auth_first_name(auth_data) || user.last_name != parsed_auth_last_name(auth_data)
+      user.first_name = parsed_auth_first_name(auth_data)
+      user.last_name = parsed_auth_last_name(auth_data)
+      user.save
+    end
+    user
+  end
+
+  def parsed_auth_first_name(auth_data)
+    auth_data["info"]["name"].split(" ")[0]
+  end
+
+  def parsed_auth_last_name(auth_data)
+    auth_data["info"]["name"].split(" ")[1]
+  end
 end

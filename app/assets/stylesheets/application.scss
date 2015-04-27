@@ -5,13 +5,47 @@
 
 
 
+.user-information {
+  left-margin: 50%;
+}
+
+div .black-background {
+  border: 2px;
+  background-color: black;
+  border-radius: 50px, 0px, 50px, 0px;
+  text-align: center;
+}
+
+.container-fluid {
+  border: solid black;
+  border-radius: 5px, -px, 5px, 0px;
+  background: black;
+}
+
+.container {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  background: white;
+  align: center;
+  border: 3px solid;
+  border-radius: 15px;
+}
+.container p {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  background: black;
+  align: center;
+  border: 3px solid;
+  border-radius: 15px;
+}
+
  div#flash_notice {
    background-color: #36a830;
    color: white;
    padding: 5px;
  }
 
- div#flash_errors {
+ div#x {
   background-color: #c71b00;
   color: white;
   padding: 5px;

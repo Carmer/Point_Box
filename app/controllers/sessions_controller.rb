@@ -4,7 +4,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(username: params[:session][:username])
+    # @user = User.find_or_create_by_auth(request.env['omniauth.auth'])
+    @user = User.find_by(username: params[:session]['username'])
     if @user.admin? && @user && @user.authenticate(params[:session][:password])
         flash[:notice] = "Hello Admin, #{@user.username}. You are now logged in."
         session[:user_id] = @user.id
