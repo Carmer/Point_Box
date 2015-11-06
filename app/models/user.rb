@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   enum role: %w(default admin super_admin)
 
   def self.find_or_create_by_auth(auth_data)
-    user = User.where(provider: auth_data['provider'], id: auth_data['uid']).first_or_create
+    user = User.where(provider: auth_data["provider"], id: auth_data['uid']).first_or_create
     if user.first_name != parsed_auth_first_name(auth_data) || user.last_name != parsed_auth_last_name(auth_data)
       user.first_name = parsed_auth_first_name(auth_data)
       user.last_name = parsed_auth_last_name(auth_data)
@@ -29,6 +29,6 @@ class User < ActiveRecord::Base
   end
 
   def parsed_auth_last_name(auth_data)
-    auth_data["info"]["name"].split(" ")[1]      
+    auth_data["info"]["name"].split(' ')[1]      
   end
 end
