@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true
   validates :username, presence: true
 
-  enum role: %w(default admin)
+  enum role: %w(default admin super_admin)
 
   def self.find_or_create_by_auth(auth_data)
     user = User.where(provider: auth_data['provider'], id: auth_data['uid']).first_or_create
