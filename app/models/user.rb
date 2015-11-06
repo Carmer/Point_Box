@@ -29,6 +29,6 @@ class User < ActiveRecord::Base
   end
 
   def parsed_auth_last_name(auth_data)
-    auth_data["info"]["name"].split(" ")[1]
+    auth_data["info"]["name"].split(" ")[1]      
   end
 end
